@@ -1,9 +1,9 @@
 // Assignment Code
 
-const lowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-const upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","UV","W","X","Y","Z"]
-const numbers = ["0","1","2","3","4","5","6","7","8","9"]
-const symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
+var lowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+var upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","UV","W","X","Y","Z"]
+var numbers = ["0","1","2","3","4","5","6","7","8","9"]
+var symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
 
 var generateBtn = document.querySelector("#generate");
 
@@ -24,7 +24,18 @@ function generatePassword() {
         if (!(confirmLow || confirmUp || confirmNum || confirmSym)) {
           return alert("You must select at least one character set!");
             }
-        const confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
+        var confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
+          
+          for (var i = 0; i = true; i++) { 
+          } if (i = true) { 
+
+          }
+
+      }
+        // If we iterate through array, do work if one is true
+        // For loop to iterate 
+        // How to create a connection between for example confirmLow and lowChar?
+
         if (confirms(!confirmLow)) {
           var noLow = upperChar.concat(numbers, symbols);
           console.log(noLow)
