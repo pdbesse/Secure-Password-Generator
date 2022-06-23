@@ -16,7 +16,10 @@ var passwordText = document.querySelector("#password");
 
 }
 
+
+
 function generatePassword() {
+  
   var confirmLength = prompt("Choose a password length.")
     if (confirmLength < 8) {
       return alert("Password must be between 8 and 128 characters.");
@@ -29,9 +32,38 @@ function generatePassword() {
       var confirmSym = confirm("Do you want to use special characters?")
         if (!(confirmLow || confirmUp || confirmNum || confirmSym)) {
           return alert("You must select at least one character set!");
-
       }
-  } /* if (confirmLow || !(confirmUp || confirmNum || confirmSym)) */
+    }
+      const confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
+      var selections = confirms
+      if (!confirmLow) {
+        selections.splice(0,1)
+        confirmUp.concat(confirmNum, confirmSym)
+        console.log(selections)
+      } 
+
+      if (!confirmUp) {
+          selections.splice(1,1)
+          confirmLow.concat(confirmNum, confirmSym)
+          console.log(selections)
+        }
+
+      if (!confirmNum) {
+          selections.splice(2,1)
+          confirmUp.concat(confirmLow, confirmSym)
+          console.log(selections)
+      }
+
+      if (!confirmSym) {
+        selections.splice(3,1)
+        confirmLow.concat(confirmUp, confirmNum)
+        console.log(selections)
+      }
+
+
+
+
+    
 
 }
 
