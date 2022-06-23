@@ -7,16 +7,7 @@ const symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
 
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
+//Generate Password function
 
 function generatePassword() {
   
@@ -32,38 +23,47 @@ function generatePassword() {
       var confirmSym = confirm("Do you want to use special characters?")
         if (!(confirmLow || confirmUp || confirmNum || confirmSym)) {
           return alert("You must select at least one character set!");
-      }
+            }
+        const confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
+        if (confirms(!confirmLow)) {
+          var noLow = upperChar.concat(numbers, symbols);
+          console.log(noLow)
+        } 
     }
-      const confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
-      var selections = confirms
-      if (!confirmLow) {
-        selections.splice(0,1)
-        confirmUp.concat(confirmNum, confirmSym)
-        console.log(selections)
+      /* const confirms = [confirmLow, confirmUp, confirmNum, confirmSym] */
+      /* var selections = confirms */
+
+     /*  if (confirms(!confirmLow)) {
+        var noLow = upperChar.concat(numbers, symbols);
+        console.log(noLow)
+      }  */
+      /* 
+      if (confirms(!confirmUp)) {
+        var noUp = lowerChar.concat(numbers, symbols);
+        
+        
       } 
 
-      if (!confirmUp) {
-          selections.splice(1,1)
-          confirmLow.concat(confirmNum, confirmSym)
-          console.log(selections)
-        }
+      if (confirms(!confirmNum)) {
+        var noNum = lowerChar.concat(upperChar, symbols);
+        
+        
+      } 
+      
+      if (confirms(!confirmSym)) {
+        var noSym = lowerChar.concat(upperChar, numbers);
+        
+        
+      } 
+ */
+}
 
-      if (!confirmNum) {
-          selections.splice(2,1)
-          confirmUp.concat(confirmLow, confirmSym)
-          console.log(selections)
-      }
+// Write password to the #password input
+function writePassword() {
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
-      if (!confirmSym) {
-        selections.splice(3,1)
-        confirmLow.concat(confirmUp, confirmNum)
-        console.log(selections)
-      }
-
-
-
-
-    
+  passwordText.value = password;
 
 }
 
