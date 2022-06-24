@@ -26,6 +26,15 @@ function generatePassword() {
             }
     
     }
+   
+    if (confirmLow) {
+      preRandPW = preRandPW.concat(lowChar)}
+    if (confirmUp) {
+      preRandPW = preRandPW.concat(lowChar, upperChar)}
+    if (confirmNum) {
+      preRandPW = preRandPW.concat(lowChar, upperChar, numbers)}
+    if (confirmSym) {
+      preRandPW = preRandPW.concat(lowChar, upperChar, numbers, symbols)}
 }
 
 // Write password to the #password input
