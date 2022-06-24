@@ -24,38 +24,8 @@ function generatePassword() {
         if (!(confirmLow || confirmUp || confirmNum || confirmSym)) {
           return alert("You must select at least one character set!");
             }
-        const confirms = [confirmLow, confirmUp, confirmNum, confirmSym]
-        if (confirms(!confirmLow)) {
-          var noLow = upperChar.concat(numbers, symbols);
-          console.log(noLow)
-        } 
+    
     }
-      /* const confirms = [confirmLow, confirmUp, confirmNum, confirmSym] */
-      /* var selections = confirms */
-
-     /*  if (confirms(!confirmLow)) {
-        var noLow = upperChar.concat(numbers, symbols);
-        console.log(noLow)
-      }  */
-      /* 
-      if (confirms(!confirmUp)) {
-        var noUp = lowerChar.concat(numbers, symbols);
-        
-        
-      } 
-
-      if (confirms(!confirmNum)) {
-        var noNum = lowerChar.concat(upperChar, symbols);
-        
-        
-      } 
-      
-      if (confirms(!confirmSym)) {
-        var noSym = lowerChar.concat(upperChar, numbers);
-        
-        
-      } 
- */
 }
 
 // Write password to the #password input
@@ -66,18 +36,6 @@ var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
-
-// Create function expressions
-
-// Explore parameter placeholders
-
-// Explore callback functions
-
-// Push array for passwords
-
-// Object Strings
-
-// Activity 03.20 README arrays into new array, indexof method
 
 // Add event listener to generate button
 
