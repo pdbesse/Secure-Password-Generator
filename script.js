@@ -1,11 +1,11 @@
 // Assignment Code
 
 var lowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-var upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U", "V","W","X","Y","Z"]
+var upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 var numbers = ["0","1","2","3","4","5","6","7","8","9"]
 var symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
 var allChar = [lowChar, upperChar, numbers, symbols]
-
+var preRandPW = []
 
 var generateBtn = document.querySelector("#generate");
 
@@ -26,18 +26,31 @@ function generatePassword() {
         if ((!confirmLow && !confirmUp && !confirmNum && !confirmSym)) {
           return alert("You must select at least one character set!");
             }
-          var charSelections = []
           var confirms = [confirmLow, confirmUp, confirmNum, confirmSym] 
           for (var i = confirms.length - 1; i >= 0; i--) {  
             if (confirms[i] == true) {
-              (confirms[i] = allChar[i])
-            } else 
-              (confirms[i] == false) {
-                (confirms[i] !== allChar[i])
-              }
+               (confirms[i] = allChar[i])
+            } else confirms.splice (i,1)
+                preRandPW = confirms[0] 
+                if (confirms.length != 1) {
+                for (var i = 1; i < confirms.length; i++) {
+                  preRandPW = preRandPW.concat(confirms[i])
+                  }}
+                  
+                    console.log(preRandPW)
             }
             
-            console.log(confirms);
+            }
+
+
+          
+            /* for (var i = 0; i = confirmLength;) {
+              var genPassword = Math.floor(Math.random() * confirmLength)
+            } */
+            
+            /* console.log(confirms); */
+
+            // for loop new array for n, pull random index #s
 
             /* if (i = true) {newArr = charSelections
             console.log(charSelections);
@@ -51,7 +64,6 @@ function generatePassword() {
         /* if (confirms(!confirmLow)) {
           var noLow = upperChar.concat(numbers, symbols);
           console.log(noLow) */
-        } 
     
     
       /* const confirms = [confirmLow, confirmUp, confirmNum, confirmSym] */
@@ -80,6 +92,7 @@ function generatePassword() {
         
       } 
  */
+
 
 
 // Write password to the #password input
