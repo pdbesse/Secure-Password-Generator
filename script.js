@@ -4,6 +4,7 @@ const lowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 const upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","UV","W","X","Y","Z"]
 const numbers = ["0","1","2","3","4","5","6","7","8","9"]
 const symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
+var preRandPW = []
 
 var generateBtn = document.querySelector("#generate");
 
@@ -21,7 +22,7 @@ function generatePassword() {
       var confirmUp = confirm("Do you want to use uppercase letters?")
       var confirmNum = confirm("Do you want to use numbers?")
       var confirmSym = confirm("Do you want to use special characters?")
-        if (!(confirmLow || confirmUp || confirmNum || confirmSym)) {
+        if (!confirmLow && !confirmUp && !confirmNum && !confirmSym) {
           return alert("You must select at least one character set!");
             }
     
@@ -30,11 +31,19 @@ function generatePassword() {
     if (confirmLow) {
       preRandPW = preRandPW.concat(lowChar)}
     if (confirmUp) {
-      preRandPW = preRandPW.concat(lowChar, upperChar)}
+      preRandPW = preRandPW.concat(upperChar)}
     if (confirmNum) {
-      preRandPW = preRandPW.concat(lowChar, upperChar, numbers)}
+      preRandPW = preRandPW.concat(numbers)}
     if (confirmSym) {
-      preRandPW = preRandPW.concat(lowChar, upperChar, numbers, symbols)}
+      preRandPW = preRandPW.concat(symbols)}
+
+    var genPW = ""
+    for (var i = 0; i < confirmLength; i++) {
+
+    genPW = genPW + preRandPW[Math.floor(Math.random() * preRandPW.length)];
+    console.log(genPW)
+    }
+    return genPW;
 }
 
 // Write password to the #password input
