@@ -4,7 +4,7 @@ const lowChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"
 const upperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","UV","W","X","Y","Z"]
 const numbers = ["0","1","2","3","4","5","6","7","8","9"]
 const symbols = ["!","@","#","$","%","^","&","*","(",")","[","]"]
-var preRandPW = []
+/* var preRandPW = [] */
 
 var generateBtn = document.querySelector("#generate");
 
@@ -27,7 +27,7 @@ function generatePassword() {
             }
     
     }
-   
+    var preRandPW = []
     if (confirmLow) {
       preRandPW = preRandPW.concat(lowChar)}
     if (confirmUp) {
@@ -35,7 +35,8 @@ function generatePassword() {
     if (confirmNum) {
       preRandPW = preRandPW.concat(numbers)}
     if (confirmSym) {
-      preRandPW = preRandPW.concat(symbols)}
+      preRandPW = preRandPW.concat(symbols)
+    }
 
     var genPW = ""
     for (var i = 0; i < confirmLength; i++) {
